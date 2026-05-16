@@ -1,0 +1,31 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "Namste React",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubhamdeshmukh1994/Namste-React.git"
+  },
+  "author": "shubham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shubhamdeshmukh1994/Namste-React/issues"
+  },
+  "homepage": "https://github.com/shubhamdeshmukh1994/Namste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-router-dom": "^6.30.3"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
