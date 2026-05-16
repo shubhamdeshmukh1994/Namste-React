@@ -5,6 +5,7 @@ import Shimmer from "./shimmar.jsx";
 import Category from "./Category.jsx";
 import { RESTAURANT_LIST_URL } from "../utils/Constant.js";
 import { Link } from "react-router-dom";
+import userOnlineStatus from "../utils/userOnlineStatus.jsx"
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -27,6 +28,16 @@ const Body = () => {
       console.error("Error fetching data:", error);
     }
   };
+
+  const onlineStatus = userOnlineStatus();
+  if(onlineStatus===false){
+    return(
+      <h1>
+        Looks like your offline, Please check your internet connection
+      </h1>
+    )
+  }
+
   return (
     <>
       <Category />
