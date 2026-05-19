@@ -1,13 +1,13 @@
 
 const Category = () => {
   return (
-    <div className="sidebar">
+    <div className="flex items-center">
       <div className="category">
         <h3>Categories</h3>
-        <ul>
-          <li>Pizza</li>
-          <li>Burgers</li>
-          <li>IceCream</li>
+        <ul className="flex m-2 ">
+          <li className="px-4">Pizza</li>
+          <li className="px-4">Burgers</li>
+          <li className="px-4">IceCream</li>
         </ul>
       </div>
     </div>

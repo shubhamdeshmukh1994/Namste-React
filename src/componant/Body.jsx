@@ -41,9 +41,9 @@ const Body = () => {
   return (
     <>
       <Category />
-      <div className="res-filter">
+      <div className="filter flex">
         <button
-          className="res-filter-btn"
+          className="px-4 py-2 bg-gray-100 rounded-lg"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4.5,
@@ -54,7 +54,7 @@ const Body = () => {
           {" "}
           Top Rated Restaurants
         </button>
-        <div className="search-bar">
+        <div className="border border-solid border-black">
           <input
             className="search"
             type="text"
@@ -65,7 +65,7 @@ const Body = () => {
         </div>
         <div className="search-btn">
           <button
-            className="search-btn"
+            className="px-4 py-2 bg-green-50 rounded-lg"
             onClick={() => {
               const filteredList = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase()),
@@ -82,7 +82,7 @@ const Body = () => {
         <Shimmer />
       ) : (
         <div className="body">
-          <div className="res-container">
+          <div className="flex flex-wrap">
             {filteredRestaurants.map((restaurant) => {
               return (
                 <Link to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}>
