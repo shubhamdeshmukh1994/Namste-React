@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import userOnlineStatus from "../utils/userOnlineStatus.jsx";
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   let buttonName = "LogIn";
   const [btnName, setBtnName] = React.useState("LogIn");
   const {loggedInUser} = useContext(UserContext);
   const onlineStatus = userOnlineStatus();
+  //subsctibing to store using selector hook provided by react
+  const cartItems = useSelector((store)=>store.cart.items);
   return (
     <div className="flex justify-between bg-yellow-50">
       <div className="logo">
@@ -30,7 +33,7 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li className="px-4">
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart" className="font-bold">Cart - ({cartItems.length} items)</Link>
           </li>
          
           <li>

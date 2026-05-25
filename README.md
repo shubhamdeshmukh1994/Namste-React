@@ -42,39 +42,13 @@
 //     -links
 //     -contact info
 
-// */
 
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading" },
-//   "Hello Namaste React from createElement",
-// );
+# Redux tool Kit
+- Install @reduxjs/toolkit and react redux
+- build our store
+- connect our to our app(provider is getting used form react-redux )
+- slice (cartSlice)
+- dispact action
+- selector
 
-// const headingUsingjsx = (
-//     <div id="heading">
-//         {heading}
-//         <h1 id="sum">Hello Namaste React using JSX</h1>
-//     </div>
-// );
-
-// const headingComponent = (title) => {
-//     return (
-//         <div id="heading">
-//             <title>{title}</title>
-//             Hello Namaste React using JSX
-//             <h1 id="sum">Sum of {number1} and {number2} is {number1 + number2}</h1>
-//         </div>
-//     );
-// }
-
-// class HeadingComponent extends React.Component {
-//     render() {
-//         return (
-//             <div id="heading">
-//                 <headingUsingjsx>{heading}</headingUsingjsx>
-//                 Hello Namaste React using JSX
-//                 <h1 id="sum">Sum of {number1} and {number2} is {number1 + number2}</h1>
-//             </div>
-//         );
-//     }
-// }
+react redux(acting bridge betn our store and our app )
