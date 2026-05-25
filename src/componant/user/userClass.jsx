@@ -1,4 +1,5 @@
 import React from "react";
+import UserContext from "../../utils/UserContext";
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
@@ -45,6 +46,13 @@ class UserClass extends React.Component {
       <div className="user-card">
         <h1>User Component using Class based Component </h1>
         <h1>Count : {count}</h1>
+        <div>
+          <UserContext.Consumer>
+              {({loggedInUser})=>(
+                <h1 className="text-xl font-bold">From Context : {loggedInUser}</h1>
+              )}
+          </UserContext.Consumer>
+        </div>
         {/* react updating state variable or updating state */}
         <button
           className="btn_cnt"

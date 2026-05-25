@@ -2,10 +2,12 @@ import React from "react";
 import { LOGO_URL } from "../utils/Constant.js";
 import { Link } from "react-router-dom";
 import userOnlineStatus from "../utils/userOnlineStatus.jsx";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 const Header = () => {
   let buttonName = "LogIn";
   const [btnName, setBtnName] = React.useState("LogIn");
-
+  const {loggedInUser} = useContext(UserContext);
   const onlineStatus = userOnlineStatus();
   return (
     <div className="flex justify-between bg-yellow-50">
@@ -30,6 +32,7 @@ const Header = () => {
           <li className="px-4">
             <Link to="/cart">Cart</Link>
           </li>
+         
           <li>
             <button
               className="login_btn"
@@ -40,6 +43,7 @@ const Header = () => {
               {btnName}
             </button>
           </li>
+           <li className="px-4"> {loggedInUser} </li>
         </ul>
       </nav>
     </div>

@@ -6,11 +6,14 @@ import Category from "./Category.jsx";
 import { RESTAURANT_LIST_URL } from "../utils/Constant.js";
 import { Link } from "react-router-dom";
 import userOnlineStatus from "../utils/userOnlineStatus.jsx";
+import { useContext } from "react";
+import UserContext from "../utils/UserContext.jsx";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const RestaurantPromoted = withPromotedLabel(RestaurantCard);
+  const { loggedInUser, setUserName } = useContext(UserContext);
   useEffect(() => {
     fetchData();
   }, []);
@@ -62,7 +65,7 @@ const Body = () => {
             onChange={(e) => setSearchText(e.target.value)}
           />
         </div>
-        <div className="search-btn">
+        <div>
           <button
             className="px-4 py-2 bg-green-50 rounded-lg"
             onClick={() => {
@@ -74,6 +77,15 @@ const Body = () => {
           >
             Search
           </button>
+        </div>
+
+        <div>
+            <label className="px-4 py-2 rounded-lg">User Name : </label>
+            <input 
+              className="px-4 py-2 border border-black bg-white-100 rounded-lg"
+              value={loggedInUser}
+              onChange={(e)=> setUserName(e.target.value)}
+            ></input>
         </div>
       </div>
 

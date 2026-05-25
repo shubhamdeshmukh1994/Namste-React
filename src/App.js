@@ -7,16 +7,33 @@ import Contact from "./componant/contact/ContactUs.jsx";
 import Error from "./componant/error/error.jsx";
 import RestaurantMenu from "./componant/menu/Menu.jsx";
 import { lazy, Suspense } from "react";
+import UserContext from "./utils/UserContext";
+import { useState, useEffect } from "react";
 
 const Grossary = lazy(()=> import("./componant/grossary/Grossary.jsx"));
 const About = lazy(()=> import("./componant/about/AboutUs.jsx"))
 
+
+
 const AppLayout = () => {
+  //authcode
+  const [userName, setUserName] = useState("Guest");
+
+  useEffect(()=>{
+    //make api call and get userdetails
+    const data = {
+      name : "Shubham Solanke"
+    }
+    setUserName(data.name);
+  },[])
+
   return (
-    <div className="app-layout">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{loggedInUser:userName, setUserName}}>
+      <div className="app-layout">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
