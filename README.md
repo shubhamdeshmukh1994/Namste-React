@@ -52,3 +52,22 @@
 - selector
 
 react redux(acting bridge betn our store and our app )
+
+# Types of testing for developer
+    developers 
+    - Unit testing - test our commponant in isolation than other, testing small unit(commonant)
+    - Integration Testing - the integretion of componants how the communicate and colabration (developing flow writing code to create flow testing)
+    for tester
+    - End to end testing (e2e) - we will test app from start to end, how user will flow into our app to check application flow
+
+# Setup up Testing in our app
+- install React testing library
+- installed jest 
+- installed babel dependancy
+- configure babel
+- configure parcel config file to disable default babel transpilation
+- jest configuration
+- install jsdom library
+- install @babel/preset-react package
+- include babel.config for ['@babel/preset-react', {runtime: "automatic"}]
+- npm i -D @testing-library/jest-dom

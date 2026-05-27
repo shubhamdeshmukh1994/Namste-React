@@ -4,7 +4,7 @@ const RestaurantCard = (props) => {
     props.resList;
   const imageUrl = CDN_URL + cloudinaryImageId;
   return (
-    <div className="flex-wrap m-2 p-2 w-[280] h-[350] bg-gray-100 rounded-lg hover:bg-green-50">
+    <div data-testid = "restCard" className="flex-wrap m-2 p-2 w-[280] h-[350] bg-gray-100 rounded-lg hover:bg-green-50">
       <img
         src={imageUrl}
         alt="Restaurant"
