@@ -12,6 +12,9 @@ import { useState, useEffect } from "react";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore/appStore";
 import Cart from "./componant/cart/Cart.jsx";
+import Demo from "./componant/demo/Demo.jsx";
+import Demo2 from "./componant/demo/Demo2.jsx";
+import StopWatch from "./componant/stopWatch/StopWatch.jsx";
 
 const Grossary = lazy(() => import("./componant/grossary/Grossary.jsx"));
 const About = lazy(() => import("./componant/about/AboutUs.jsx"));
@@ -78,6 +81,14 @@ const appRouter = createBrowserRouter(
         {
           path: "/cart",
           element: <Cart />,
+        },
+        {
+          path: "/demo",
+          element: <><Demo /><Demo2/> </>,
+        },
+        {
+          path: "/stop-watch",
+          element: <StopWatch />,
         },
       ],
     },

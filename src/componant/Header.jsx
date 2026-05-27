@@ -33,6 +33,9 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li className="px-4">
+            <Link to="/stop-watch">StopWatch</Link>
+          </li>
+          <li className="px-4">
             <Link to="/cart" className="font-bold">Cart - ({cartItems.length} items)</Link>
           </li>
          
